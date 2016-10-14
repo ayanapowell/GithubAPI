@@ -1,28 +1,28 @@
 var githubKey = require('./../.env').githubKey;
 // 9ea22165bb0152d538e4abe449c33601f712d329
-function Github() {
+function Github(url) {
+  this.url = null;
 }
 
 Github.prototype.getUser = function(username) {
-  var that = this;
-  var userInfo = [];
+  var that = this,
+      userInfo = [];
 
   $.get('https://api.github.com/users/' + username + '?access_token=' + githubKey).then(function(response) {
     var name = response.name,
         email = response.email,
         bio = response.bio,
-        url = response.html_url,
+        url = response.html_url;
         reposUrl = response.repos_url;
     userInfo.push(name,email,bio);
-    that.displayInfo(userInfo);
     that.getRepos(reposUrl);
+    that.displayUsers(userInfo);
   });
 };
 
 Github.prototype.getRepos = function(url) {
-  var that = this,
-      repos= [];
-
+  var repos= [],
+      that = this;
   $.get(url + '?access_token=' + githubKey).then(function(response) {
     for (var i = 0; i < response.length; i++) {
       var name = response[i].name,
@@ -32,11 +32,11 @@ Github.prototype.getRepos = function(url) {
           lastUpdate = response[i].updated_at;
       repos.push([name, description, language, lastUpdate, cloneUrl]);
     }
-      that.displayRepos(repos);
+    that.displayRepos(repos);
   });
 };
 
-Github.prototype.displayInfo = function(userInfo) {
+Github.prototype.displayUsers = function(userInfo) {
   $('.info').empty();
   userInfo.forEach(function(info) {
     if (info !== null) {
@@ -56,7 +56,7 @@ Github.prototype.displayRepos = function(repos) {
         "<p><span class='bold'>Last updated: </span>" + repos[i][3] + "</p>" +
         "<p><span class='bold'>Clone at: </span>" + "<i>" + repos[i][4] + "</i></p><hr>");
     }
-  };
+  }
 };
 
 exports.githubModule = Github;

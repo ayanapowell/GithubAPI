@@ -7,5 +7,6 @@ $(document).ready(function() {
     var search = $('#search').val();
     $('#output').addClass('show');
     github.getUser(search);
+    // github.getRepos(github.url);
   });
 });
