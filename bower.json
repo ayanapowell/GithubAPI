@@ -1,6 +1,6 @@
 {
-  "name": "template",
-  "description": "",
+  "name": "github",
+  "description": "A javacript project for Epicodus demonstrating API knowledge",
   "main": "index.js",
   "license": "ISC",
   "homepage": "",

@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-size: 24px;
+}
+
+h3 {
+  font-family: monospace;
+  font-weight: lighter;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-family: monospace;
+  font-size: 1.6em;
+}
+
+// form styles
+.well {
+  width: 50%;
+  margin-top: 20px;
+  margin: 0 auto;
+}
+
+#github_form {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-top: 13px;
+}
+
+button {
+  border: none;
+  background: #2e5cb8;
+  width: 80px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+#github_form p {
+  color: white;
+  font-size: 0.55em;
+  line-height: 0.6em;
+  letter-spacing: 1px;
+  font-family: monospace;
+  padding-top: 8px;
+}
+
+// output styles
+#output {
+  display: none;
+}
+
+// show hide classes for jquery
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
