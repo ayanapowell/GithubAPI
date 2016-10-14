@@ -6,6 +6,6 @@ $(document).ready(function() {
     event.preventDefault();
     var search = $('#search').val();
     $('#output').addClass('show');
-    github.findUser(search);
+    github.getUser(search);
   });
 });
