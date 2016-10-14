@@ -41,6 +41,8 @@ Github.prototype.displayUsers = function(userInfo) {
   userInfo.forEach(function(info) {
     if (info !== null) {
       $('.info ').append('<p>' + info + '</p>');
+    } else {
+      $('.info').append("<p>Who is this user?</p>");
     }
   });
 };
@@ -55,6 +57,8 @@ Github.prototype.displayRepos = function(repos) {
         "<p><span class='bold'>Language used: </span>" + repos[i][2] + "</p>" +
         "<p><span class='bold'>Last updated: </span>" + repos[i][3] + "</p>" +
         "<p><span class='bold'>Clone at: </span>" + "<i>" + repos[i][4] + "</i></p><hr>");
+    } else {
+      $('.repos').append("<p>This user has no repositories at this time</p>");
     }
   }
 };
