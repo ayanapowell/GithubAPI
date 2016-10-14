@@ -13,18 +13,24 @@
         <h1>Giggity Github</h1>
       </div>
       <h3>Search a public github:</h3>
-      <div class="well">
-        <form id="github_form">
-          <div class="form-group">
-            <input type="text" class="form-control" id="search" placeholder="username">
-            <button type="submit" class='center-block'><p>search</p></button>
+      <form id="github_form" class="well">
+        <div class="form-group">
+          <input type="text" class="form-control" id="search" placeholder="username">
+          <button type="submit" class='center-block'><p>search</p></button>
+        </div>
+      </form>
+      <div id="output" class="row">
+        <div class="row well">
+          <div class="col-sm-4">
+            <h4>Search Results:</h4>
+            <div class='info'></div>
           </div>
-        </form>
+          <div class="col-sm-6 col-sm-offset-2">
+            <h4>Repos:</h4>
+            <div class='repos'></div>
+          </div>
+        </div>
       </div>
-      <ul id="output">
-        <h3>Search Results:</h3>
-        <div id="repos"></div>
-      </ul>
     </div>
   </body>
 </html>

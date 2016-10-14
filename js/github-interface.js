@@ -5,6 +5,7 @@ $(document).ready(function() {
   $('#github_form').submit(function(event) {
     event.preventDefault();
     var search = $('#search').val();
-    var userInfo = github.findUser(search);
+    $('#output').addClass('show');
+    github.findUser(search);
   });
 });

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-size: 24px;
+  font-family: monospace;
 }
 
 h3 {
@@ -16,7 +17,7 @@ h3 {
 }
 
 // form styles
-.well {
+form.well {
   width: 50%;
   margin-top: 20px;
   margin: 0 auto;
@@ -48,6 +49,21 @@ button {
 // output styles
 #output {
   display: none;
+  margin-top: 80px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+#output p {
+  font-size: 0.6em;
+}
+#output h4 {
+  font-size: 0.7em;
+  border-bottom: 1px solid black;
+}
+
+#output .row {
+  padding-left: 40px;
 }
 
 // show hide classes for jquery
