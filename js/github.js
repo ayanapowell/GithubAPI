@@ -12,7 +12,7 @@ Github.prototype.getUser = function(username) {
     var name = response.name,
         email = response.email,
         bio = response.bio,
-        url = response.html_url;
+        url = response.html_url,
         reposUrl = response.repos_url;
     userInfo.push(name,email,bio);
     that.getRepos(reposUrl);
@@ -40,7 +40,7 @@ Github.prototype.displayUsers = function(userInfo) {
   $('.info').empty();
   userInfo.forEach(function(info) {
     if (info !== null) {
-      $('.info').append('<p>' + info + '</p>');
+      $('.info ').append('<p>' + info + '</p>');
     }
   });
 };
