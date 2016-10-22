@@ -1,4 +1,4 @@
-var githubKey = require('./../.env').githubKey;
+var apiKey = require('./../.env').apiKey;
 // 9ea22165bb0152d538e4abe449c33601f712d329
 function Github(url) {
   this.url = null;
@@ -8,7 +8,7 @@ Github.prototype.getUser = function(username) {
   var that = this,
       userInfo = [];
 
-  $.get('https://api.github.com/users/' + username + '?access_token=' + githubKey).then(function(response) {
+  $.get('https://api.github.com/users/' + username + '?access_token=' + apiKey).then(function(response) {
     var name = response.name,
         email = response.email,
         bio = response.bio,
@@ -23,7 +23,7 @@ Github.prototype.getUser = function(username) {
 Github.prototype.getRepos = function(url) {
   var repos= [],
       that = this;
-  $.get(url + '?access_token=' + githubKey).then(function(response) {
+  $.get(url + '?access_token=' + apiKey).then(function(response) {
     for (var i = 0; i < response.length; i++) {
       var name = response[i].name,
           description = response[i].description,
