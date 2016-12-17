@@ -1,6 +1,6 @@
 # Github API
 
-#### _10-11-16_
+#### _October 11, 2016_
 
 #### By _*Ayana Powell**_
 
